@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================================
+   PREMIUM UI STYLES
+   ============================================================================ */
+
+/* Base dark mode styles */
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 dark:bg-slate-600 rounded-lg hover:bg-gray-500 dark:hover:bg-slate-500;
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-colors duration-300;
+}
+
+/* Stream Chat overrides for premium look */
+.str-chat__channel {
+  @apply flex items-center justify-center bg-white dark:bg-slate-900;
+  height: 100%;
+}
+
+.str-chat__container {
+  max-width: 1200px;
+  @apply w-full h-4/5 mx-auto rounded-2xl shadow-2xl overflow-hidden;
+}
+
+.str-chat__list {
+  @apply bg-white dark:bg-slate-800;
+  padding: 12px;
+}
+
+.str-chat__list-notifications {
+  display: none;
+}
+
+.str-chat__message-input {
+  @apply border-t border-gray-200 dark:border-slate-700;
+}
+
+/* Smooth selection styles */
+::selection {
+  @apply bg-blue-500/20 text-inherit;
+}
+
+::-moz-selection {
+  @apply bg-blue-500/20 text-inherit;
+}
+
+/* Focus styles */
+:focus-visible {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2 dark:ring-offset-slate-900 rounded;
+}
+
+/* Animation keyframes */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 1000px 100%;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Glassmorphism effect */
+.glass {
+  @apply backdrop-blur-xl bg-white/80 dark:bg-slate-900/80 border border-white/20 dark:border-white/10;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r;
+}
+
+/* Shadow utilities */
+.shadow-premium {
+  @apply shadow-2xl shadow-blue-500/10 dark:shadow-blue-900/30;
+}
+
+/* Button utilities */
+.btn-premium {
+  @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg;
+}
+
+.btn-premium-primary {
+  @apply btn-premium bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:shadow-lg hover:shadow-blue-500/50;
+}
+
+.btn-premium-outline {
+  @apply btn-premium bg-transparent border-2 border-blue-500/30 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-800;
+}
+
+/* Input utilities */
+.input-premium {
+  @apply w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:text-white transition-all duration-300;
+}
+
+/* Card utilities */
+.card-premium {
+  @apply backdrop-blur-xl bg-white/80 dark:bg-slate-900/80 border border-white/20 dark:border-white/10 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300;
+}

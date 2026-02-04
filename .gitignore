@@ -1,0 +1,53 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.env
+
+# Generated documentation and manifests
+# Comment out if you want to track these in version control
+# DEPLOYMENT_CHECKLIST.md
+# FILE_MANIFEST.md
+# FEATURE_SUMMARY.txt
+
+# Build artifacts
+*.tgz
+*.tar.gz
+build/
+.cache/
+
+# OS files
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# IDE
+*.code-workspace
+*.iml
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*~
